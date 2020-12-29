@@ -1,0 +1,23 @@
+{
+  "name": "trello-test",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.12.2",
+    "axios": "^0.20.0",
+    "bootstrap": "^4.5.3",
+    "bootstrap-vue": "^2.21.1",
+    "node-sass": "^5.0.0",
+    "nuxt": "^2.14.0",
+    "sass-loader": "^10.1.0",
+    "vue": "^2.6.12",
+    "vuedraggable": "^2.24.3"
+  },
+  "devDependencies": {}
+}
