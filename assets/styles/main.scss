@@ -36,7 +36,7 @@ a:link,
 a:visited,
 input:focus,
 select:focus,
-textarea, 
+textarea,
 textarea:focus {
   outline: 0 !important;
   opacity: 1 !important;
@@ -46,6 +46,13 @@ textarea:focus {
 }
 
 /* TYPOGRAPHY START */
+
+h2,
+h3,
+h4,
+h5 {
+  color: red;
+}
 
 /* TYPOGRAPHY END */
 
@@ -85,7 +92,7 @@ textarea:focus {
       background: #f4f5f7;
       padding: 1.5rem 0 0;
       overflow-y: hidden !important;
-  
+
       &:focus {
         background-color: #fff;
         border: 2px solid #0079bf !important;
@@ -100,7 +107,7 @@ textarea:focus {
     min-height: 4rem;
     padding: 1rem;
     margin: 0 0 1rem;
-    background: rgba(9,30,66,.04);
+    background: rgba(9, 30, 66, 0.04);
     word-break: break-all;
     font-family: inherit;
   }

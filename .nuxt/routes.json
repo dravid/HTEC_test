@@ -1,0 +1,65 @@
+[
+  {
+    "name": "about",
+    "path": "/about",
+    "component": "/home/dravid/HTEC/VUE/HTEC_test/pages/about/index.vue",
+    "chunkName": "pages/about/index",
+    "_name": "_4097a3be"
+  },
+  {
+    "name": "admin",
+    "path": "/admin",
+    "component": "/home/dravid/HTEC/VUE/HTEC_test/pages/admin/index.vue",
+    "chunkName": "pages/admin/index",
+    "_name": "_268c793a"
+  },
+  {
+    "name": "lists",
+    "path": "/lists",
+    "component": "/home/dravid/HTEC/VUE/HTEC_test/pages/lists/index.vue",
+    "chunkName": "pages/lists/index",
+    "_name": "_06a80429"
+  },
+  {
+    "name": "posts",
+    "path": "/posts",
+    "component": "/home/dravid/HTEC/VUE/HTEC_test/pages/posts/index.vue",
+    "chunkName": "pages/posts/index",
+    "_name": "_8d6f3232"
+  },
+  {
+    "name": "admin-auth",
+    "path": "/admin/auth",
+    "component": "/home/dravid/HTEC/VUE/HTEC_test/pages/admin/auth/index.vue",
+    "chunkName": "pages/admin/auth/index",
+    "_name": "_0079e56a"
+  },
+  {
+    "name": "admin-new-post",
+    "path": "/admin/new-post",
+    "component": "/home/dravid/HTEC/VUE/HTEC_test/pages/admin/new-post/index.vue",
+    "chunkName": "pages/admin/new-post/index",
+    "_name": "_1f4da2a2"
+  },
+  {
+    "name": "admin-postId",
+    "path": "/admin/:postId",
+    "component": "/home/dravid/HTEC/VUE/HTEC_test/pages/admin/_postId/index.vue",
+    "chunkName": "pages/admin/_postId/index",
+    "_name": "_dfbcf4e4"
+  },
+  {
+    "name": "posts-id",
+    "path": "/posts/:id",
+    "component": "/home/dravid/HTEC/VUE/HTEC_test/pages/posts/_id/index.vue",
+    "chunkName": "pages/posts/_id/index",
+    "_name": "_1394935c"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/home/dravid/HTEC/VUE/HTEC_test/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_3de510e3"
+  }
+]
