@@ -17,6 +17,18 @@
   "LazyBoardPreview": {
     "description": "Auto imported from components/Boards/BoardPreview.vue"
   },
+  "InputCard": {
+    "description": "Auto imported from components/Input/InputCard.vue"
+  },
+  "LazyInputCard": {
+    "description": "Auto imported from components/Input/InputCard.vue"
+  },
+  "InputContainer": {
+    "description": "Auto imported from components/Input/InputContainer.vue"
+  },
+  "LazyInputContainer": {
+    "description": "Auto imported from components/Input/InputContainer.vue"
+  },
   "Card": {
     "description": "Auto imported from components/Lists/Card.vue"
   },
@@ -40,18 +52,6 @@
   },
   "LazyTitle": {
     "description": "Auto imported from components/Lists/Title.vue"
-  },
-  "InputCard": {
-    "description": "Auto imported from components/Input/InputCard.vue"
-  },
-  "LazyInputCard": {
-    "description": "Auto imported from components/Input/InputCard.vue"
-  },
-  "InputContainer": {
-    "description": "Auto imported from components/Input/InputContainer.vue"
-  },
-  "LazyInputContainer": {
-    "description": "Auto imported from components/Input/InputContainer.vue"
   },
   "TheHeader": {
     "description": "Auto imported from components/Navigation/TheHeader.vue"

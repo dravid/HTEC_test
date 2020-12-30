@@ -44,10 +44,6 @@ export default {
   },
   name: 'List',
   props: {
-    id: {
-      type: String,
-      required: true,
-    },
     listData: {
       type: Object,
       required: true,

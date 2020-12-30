@@ -24,17 +24,20 @@ export const mutations = {
     state.loadedLists = lists;
   },
   addList(state, list) {
+    list = { ...list, cards: [] };
     const lists = state.loadedLists;
     lists.filter((list) => lists.boardId === list.idBoard);
 
     lists.push(list);
   },
   addCard(state, card) {
-    const listIndex = state.loadedLists.findIndex(
-      (list) => list.id === card.idList
-    );
+    const loadList = state.loadedLists;
+    const listIndex = loadList.findIndex((list) => list.id === card.idList);
 
-    state.loadedLists[listIndex].cards.push(card);
+    loadList[listIndex].cards.push(card);
+
+    console.log(state.loadedLists);
+    console.log(loadList[listIndex].cards);
   },
   editCard(state, card) {
     const loadList = state.loadedLists;

@@ -4,7 +4,6 @@
       v-for="list in lists"
       :key="list.id"
       :listData="list"
-      :id="list.id"
     />
   </section>
 </template>
