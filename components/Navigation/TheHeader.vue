@@ -1,33 +1,23 @@
 <template>
-<div class="header-container">
-  <header class="the-header">
-    <TheSideNavToggle @toggle="$emit('sidenav-toggle')" />
-    <div class="logo">
-      <nuxt-link to="/">Trello Test</nuxt-link>
-    </div>
-    <div class="spacer"></div>
-    <div class="navigation-items">
-      <ul class="nav-list">
-        <li class="nav-item"><nuxt-link to="/posts">Boards</nuxt-link></li>
-        <li class="nav-item"><nuxt-link to="/about">About</nuxt-link></li>
-        <li class="nav-item"><nuxt-link to="/admin">Admin</nuxt-link></li>
-      </ul>
-    </div>
-  </header>
-</div>
+  <div class="header-container">
+    <header class="the-header">
+      <div class="logo">
+        <nuxt-link to="/">Trello Test</nuxt-link>
+      </div>
+    </header>
+  </div>
 </template>
 
 <script>
-import TheSideNavToggle from "@/components/Navigation/TheSideNavToggle";
+import TheSideNavToggle from '@/components/Navigation/TheSideNavToggle';
 
 export default {
-  name: "TheHeader",
+  name: 'TheHeader',
   components: {
-    TheSideNavToggle
-  }
+    TheSideNavToggle,
+  },
 };
 </script>
-
 
 <style scoped>
 .header-container {
@@ -41,7 +31,7 @@ export default {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: black;
+  background: #0096AC;
   z-index: 100;
   box-sizing: border-box;
   padding: 0 20px;
@@ -49,12 +39,23 @@ export default {
 
 .logo {
   margin: 0 10px;
-  font-size: 1.3rem;
+  font-size: 1.7rem;
 }
 
-.logo a {
+.logo a:link,
+.logo a:visited {
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
   text-decoration: none;
-  color: white;
+  color: #00c3e1;
+  letter-spacing: 2px;
+  transition: all .2s;
+}
+
+.logo a:hover {
+  color: #fff;
+  opacity: .8 !important;
 }
 
 .spacer {

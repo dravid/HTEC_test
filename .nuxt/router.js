@@ -3,15 +3,16 @@ import Router from 'vue-router'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _4097a3be = () => interopDefault(import('../pages/about/index.vue' /* webpackChunkName: "pages/about/index" */))
-const _268c793a = () => interopDefault(import('../pages/admin/index.vue' /* webpackChunkName: "pages/admin/index" */))
-const _06a80429 = () => interopDefault(import('../pages/lists/index.vue' /* webpackChunkName: "pages/lists/index" */))
-const _8d6f3232 = () => interopDefault(import('../pages/posts/index.vue' /* webpackChunkName: "pages/posts/index" */))
-const _0079e56a = () => interopDefault(import('../pages/admin/auth/index.vue' /* webpackChunkName: "pages/admin/auth/index" */))
-const _1f4da2a2 = () => interopDefault(import('../pages/admin/new-post/index.vue' /* webpackChunkName: "pages/admin/new-post/index" */))
-const _dfbcf4e4 = () => interopDefault(import('../pages/admin/_postId/index.vue' /* webpackChunkName: "pages/admin/_postId/index" */))
-const _1394935c = () => interopDefault(import('../pages/posts/_id/index.vue' /* webpackChunkName: "pages/posts/_id/index" */))
-const _3de510e3 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+const _cb0b66fa = () => interopDefault(import('../pages/about/index.vue' /* webpackChunkName: "pages/about/index" */))
+const _b1003c76 = () => interopDefault(import('../pages/admin/index.vue' /* webpackChunkName: "pages/admin/index" */))
+const _7d23baea = () => interopDefault(import('../pages/lists/index.vue' /* webpackChunkName: "pages/lists/index" */))
+const _740e8549 = () => interopDefault(import('../pages/posts/index.vue' /* webpackChunkName: "pages/posts/index" */))
+const _2bdd1770 = () => interopDefault(import('../pages/admin/auth/index.vue' /* webpackChunkName: "pages/admin/auth/index" */))
+const _13b21e8d = () => interopDefault(import('../pages/admin/new-post/index.vue' /* webpackChunkName: "pages/admin/new-post/index" */))
+const _27c7bc20 = () => interopDefault(import('../pages/admin/_postId/index.vue' /* webpackChunkName: "pages/admin/_postId/index" */))
+const _ebbc5898 = () => interopDefault(import('../pages/posts/_id/index.vue' /* webpackChunkName: "pages/posts/_id/index" */))
+const _d49bbe76 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+const _da530cf2 = () => interopDefault(import('../pages/_board/index.vue' /* webpackChunkName: "pages/_board/index" */))
 
 // TODO: remove in Nuxt 3
 const emptyFn = () => {}
@@ -31,40 +32,44 @@ export const routerOptions = {
 
   routes: [{
     path: "/about",
-    component: _4097a3be,
+    component: _cb0b66fa,
     name: "about"
   }, {
     path: "/admin",
-    component: _268c793a,
+    component: _b1003c76,
     name: "admin"
   }, {
     path: "/lists",
-    component: _06a80429,
+    component: _7d23baea,
     name: "lists"
   }, {
     path: "/posts",
-    component: _8d6f3232,
+    component: _740e8549,
     name: "posts"
   }, {
     path: "/admin/auth",
-    component: _0079e56a,
+    component: _2bdd1770,
     name: "admin-auth"
   }, {
     path: "/admin/new-post",
-    component: _1f4da2a2,
+    component: _13b21e8d,
     name: "admin-new-post"
   }, {
     path: "/admin/:postId",
-    component: _dfbcf4e4,
+    component: _27c7bc20,
     name: "admin-postId"
   }, {
     path: "/posts/:id",
-    component: _1394935c,
+    component: _ebbc5898,
     name: "posts-id"
   }, {
     path: "/",
-    component: _3de510e3,
+    component: _d49bbe76,
     name: "index"
+  }, {
+    path: "/:board",
+    component: _da530cf2,
+    name: "board"
   }],
 
   fallback: false

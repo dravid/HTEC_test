@@ -1,21 +1,25 @@
 <template>
   <nuxt-link
-    :to="{ name: 'lists', params: { boardId: { id } } }"
+    :to="'/'+id"
     class="post-preview"
-    v-if="id === '58616c32a3e615b5afbbd93e'"
+    v-if="
+      id === '58616c32a3e615b5afbbd93e' 
+      || 
+      id === '5fec67bbb8f05811b2144255'
+    "
   >
-    <article :style="{ 'background-color': bcgColor }">
+    <div :style="{ 'background-color': bcgColor }">
       <div class="post-content">
-        <h1>{{ board.name }} {{ board.id }} {{ bcgColor }}</h1>
+        <h1>{{ board.name }}</h1>
       </div>
-    </article>
+    </div>
   </nuxt-link>
-  <div class="post-preview" v-else>
-    <article :style="{ 'background-color': bcgColor }">
+  <div class="post-preview forbidden" @click="forbiddenMessage" v-else>
+    <div :style="{ 'background-color': bcgColor }">
       <div class="post-content">
-        <h1>{{ board.name }} {{ board.id }} {{ bcgColor }}</h1>
+        <h1>{{ board.name }}</h1>
       </div>
-    </article>
+    </div>
   </div>
 </template>
 
@@ -36,6 +40,11 @@ export default {
       required: true,
     },
   },
+  methods: {
+    forbiddenMessage() {
+      alert('Not for testing purposes. Access denied.');
+    },
+  },
 };
 </script>
 
@@ -49,6 +58,10 @@ export default {
   transition: opacity 0.3s;
 }
 
+.post-preview.forbidden>article:hover {
+  background-color: rgba(230, 0, 0, .6) !important;
+}
+
 a {
   text-decoration: none;
   color: black;
@@ -56,21 +69,18 @@ a {
 
 @media (min-width: 850px) {
   .post-preview {
-    width: 400px;
-    margin: 10px;
+    width: 40rem;
+    margin: 1rem;
   }
 }
 
-.post-thumbnail {
-  width: 100%;
-  height: 200px;
-  background-position: center;
-  background-size: cover;
-}
-
 .post-content {
-  padding: 10px;
+  padding: 2rem;
   text-align: center;
+  min-height: 15rem;
+  display: flex;
+  align-items: flex-start;
+  text-align: left;
 }
 
 a:hover .post-content,

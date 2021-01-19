@@ -49,11 +49,22 @@ export default {
 
 <style scoped>
 .card-item {
+  font-size: 1.2rem;
+  font-weight: 500;
   padding: 1rem;
-  border: 1px solid #cecece;
+  box-shadow: 0 1px 0 rgba(9,30,66,.25);
+  background-color: #fff;
+  border-radius: 4px;
+  color: #172b4d;
+  transition: all .2s;
+}
+
+.card-item:hover {
+  background-color: #ebecf0;
+  opacity: .8;
 }
 
 .card-item:not(:last-of-type) {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 </style>

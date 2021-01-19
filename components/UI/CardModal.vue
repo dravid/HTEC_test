@@ -1,12 +1,15 @@
 <template>
   <b-modal :id="card.id" size="lg">
-    <template #modal-title >
-      <InputContainer 
+    <template #modal-title>
+      <InputContainer
         :modalTitle="card.name"
         type="edit-card"
         :cardId="card.id"
-        :listId="list.id" />
-      <h5>in list: <span>{{ list.name }}</span></h5>
+        :listId="list.id"
+      />
+      <h5>
+        in list: <span>{{ list.name }}</span>
+      </h5>
     </template>
     <div class="d-block">
       <h3>Description</h3>
@@ -18,11 +21,11 @@
         :listId="list.id"
       />
     </div>
-    <p>
-      Last activity: <span>{{ card.dateLastActivity | date }}</span>
-    </p>
     <template #modal-footer>
-      <button @click="$emit('delete-card')">Delete Card</button>
+      <b-button size="lg" variant="danger" @click="$emit('delete-card')">Delete Card</b-button>
+      <p>
+        Last activity: <span>{{ card.dateLastActivity | date }}</span>
+      </p>
     </template>
   </b-modal>
 </template>
@@ -51,8 +54,8 @@ export default {
   },
   methods: {
     updateTitle() {
-     this.$emit('handle-crud');
-    }
-  }
+      this.$emit('handle-crud');
+    },
+  },
 };
 </script>

@@ -25,14 +25,13 @@ export default {
 }
 </script>
 
-
 <style scoped>
 .posts-list {
   display: flex;
-  padding: 20px;
+  padding: 2rem;
   box-sizing: border-box;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 </style>

@@ -8,18 +8,6 @@ export const mutations = {
   setPosts(state, posts) {
     state.loadedBoards = posts;
   },
-  addPost(state, post) {
-    state.loadedBoards.push(post);
-  },
-  editPost(state, editedPost) {
-    const postIndex = state.loadedBoards.findIndex(
-      (post) => post.id === editedPost.id
-    );
-    state.loadedBoards[postIndex] = editedPost;
-  },
-  setToken(state, token) {
-    state.token = token;
-  },
   getLists(state, lists) {
     state.loadedLists = lists;
   },
@@ -30,14 +18,25 @@ export const mutations = {
 
     lists.push(list);
   },
+  editList(state, list) {
+    const loadList = state.loadedLists;
+
+    const listIndex = loadList.findIndex((el) => el.id === list.listId);
+
+    for (const key in list.update) {
+      loadList[listIndex][key] = list.update[key];
+    }
+  },
+  deleteList(state, listId) {
+    const listIndex = state.loadedLists.findIndex((list) => list.id === listId);
+
+    state.loadedLists.splice(listIndex, 1);
+  },
   addCard(state, card) {
     const loadList = state.loadedLists;
     const listIndex = loadList.findIndex((list) => list.id === card.idList);
 
     loadList[listIndex].cards.push(card);
-
-    console.log(state.loadedLists);
-    console.log(loadList[listIndex].cards);
   },
   editCard(state, card) {
     const loadList = state.loadedLists;
@@ -78,24 +77,11 @@ export const actions = {
       })
       .catch((e) => context.error(e));
   },
-  addPost(vuexContext, post) {
-    const createdPost = {
-      ...post,
-      updatedDate: new Date(),
-    };
-    return this.$axios
-      .$post('/posts.json?auth=' + vuexContext.state.token, createdPost)
-      .then((data) => {
-        vuexContext.commit('addPost', { ...createdPost, id: data.name });
-      })
-      .catch((e) => console.log(e));
-  },
-
   setPosts(vuexContext, posts) {
     vuexContext.commit('setPosts', posts); // Mutations setPosts
   },
   getLists(vuexContext, boardId) {
-    boardId = boardId ? boardId : vuexContext.getters.loadedBoards[0].id;
+    const boardData = this.state.loadedBoards.filter((board) => board.id === boardId);
 
     return this.$axios
       .$get(
@@ -104,7 +90,7 @@ export const actions = {
       .then((data) => {
         const listsArray = [];
         for (const key in data) {
-          listsArray.push({ ...data[key], boardId: boardId });
+          listsArray.push({ ...data[key], boardTitle: boardData[0].name, boardId });
         }
         vuexContext.commit('getLists', listsArray);
       })
@@ -118,6 +104,29 @@ export const actions = {
       )
       .then((data) => {
         vuexContext.commit('addList', data);
+      })
+      .catch((e) => console.log(e));
+  },
+  editList(vuexContext, listInfo) {
+    return this.$axios
+      .$put(
+        `/lists/${listInfo.listId}?&key=${process.env.trelloAPIKey}&token=${process.env.trelloToken}`,
+        listInfo.update
+      )
+      .then((res) => {
+        console.log(res);
+        vuexContext.commit('editList', listInfo);
+      })
+      .catch((e) => console.log(e));
+  },
+  deleteList(vuexContext, listId) {
+    return this.$axios
+      .$put(
+        `/lists/${listId}/closed?value=true&key=${process.env.trelloAPIKey}&token=${process.env.trelloToken}`
+      )
+      .then((data) => {
+        console.log(data);
+        vuexContext.commit('deleteList', listId);
       })
       .catch((e) => console.log(e));
   },

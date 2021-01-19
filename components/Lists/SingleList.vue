@@ -1,6 +1,5 @@
 <template>
-  <draggable tag="div" group="list" class="list-wrapper">
-    <article>
+  <div group="list" class="list-wrapper">
       <div class="list-content">
         <Title :title="listData.name" :listId="listData.id" />
         <draggable
@@ -25,8 +24,7 @@
           placeholder="Enter a title for this card..."
         />
       </div>
-    </article>
-  </draggable>
+  </div>
 </template>
 
 <script>
@@ -63,12 +61,17 @@ export default {
 
 <style scoped>
 .list-content {
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 2px #ccc;
+  background: #ebecf0;
+  border-radius: 4px;
   cursor: pointer;
-  max-width: 25rem;
-  padding: 1rem;
+  width: 30rem;
+  margin: 0 1rem 1rem 0;
+  padding: 1.5rem 1rem;
   transition: opacity 0.3s;
+}
+
+.list-wrapper {
+  display: block;
 }
 
 .cards-list {

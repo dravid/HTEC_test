@@ -1,11 +1,7 @@
 <template>
-  <section class="list-container">
-    <SingleList
-      v-for="list in lists"
-      :key="list.id"
-      :listData="list"
-    />
-  </section>
+  <draggable tag="section" group="list" class="list-container">
+    <SingleList v-for="list in lists" :key="list.id" :listData="list" />
+  </draggable>
 </template>
 
 <script>
@@ -29,14 +25,7 @@ export default {
 <style scoped>
 .list-container {
   display: flex;
-  flex-wrap: nowrap;
-  overflow: auto;
-}
-
-.list-wrapper {
-  display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  border: 1px solid red;
+  padding-bottom: 2rem;
 }
 </style>

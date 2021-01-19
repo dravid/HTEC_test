@@ -1,5 +1,5 @@
 <template>
-  <div class="input-container">
+  <div :class="`input-container ${type}`">
     <div v-if="type === 'edit-card' && modalTitle !== ''">
       <b-form-textarea
         id="textarea-small"
@@ -16,7 +16,10 @@
     <div v-else>
       <div v-if="!openInput">
         <div v-if="type !== 'edit-card'">
-          <button @click="openInput = true">
+          <button
+            @click="openInput = true"
+            :class="`switch-input-button ${type}`"
+          >
             {{
               type === 'add-card' ? '+ Add another card' : '+ Add another list'
             }}
@@ -26,7 +29,7 @@
           <pre> {{ description }} </pre>
         </div>
       </div>
-      <div class="card-input" v-else>
+      <div :class="`card-input ${type}`" v-else>
         <b-form-textarea
           id="textarea-no-resize"
           :placeholder="placeholder ? placeholder : description"
@@ -34,7 +37,7 @@
           no-resize
           max-rows="12"
         ></b-form-textarea>
-        <div>
+        <div class="handle-input">
           <button @click="handleCrud">
             {{ btnTitle }}
           </button>
@@ -150,6 +153,8 @@ export default {
             this.handleOpenInput();
             return;
           }
+          
+          this.titleM = this.modalTitle;
           alert('Empty Title Input or Title not edited.');
           break;
         case 'add-list':
@@ -174,11 +179,82 @@ export default {
 </script>
 
 <style scoped>
+.input-container {
+  width: 100%;
+}
+
+.input-container.add-list {
+  width: 30rem;
+}
+
 .card-input {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+}
+
+.switch-input-button {
+  font-size: 1.4rem;
+  background-color: transparent;
+  border: none;
+  color: #5e6c84;
+  border-radius: 3px;
+  padding: 4px 8px;
+  width: 100%;
+  text-align: left;
+}
+
+.switch-input-button:hover {
+  background-color: rgba(9, 30, 66, 0.08);
+  color: #172b4d;
+}
+
+.switch-input-button.add-list {
+  color: #fff;
+  padding: 1rem 1.5rem;
+  background-color: #52cada;
+  width: 30rem;
+}
+
+.switch-input-button.add-list:hover {
+  background-color: #64dbeb;
+}
+
+.handle-input {
+  margin-top: .5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.handle-input button {
+  border: none;
+  transition: all .2s;
+}
+
+.handle-input button:first-child {
+  background-color: #3e994c;
+  color: #fff;
+  font-size: 1.4rem;
+  padding: .8rem 1.2rem;
+  border-radius: 3px;
+  margin-right: 1.5rem;
+}
+
+.handle-input button:first-child:hover {
+  background-color: #4bbd5d;
+  color: #f5f5f5;
+}
+
+.handle-input button:last-child {
+  color: #6b778c;
+  font-size: 2rem;
+  background-color: transparent;
+}
+
+.handle-input button:last-child:hover {
+  color: #42526e;
 }
 </style>
